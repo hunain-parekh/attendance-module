@@ -1,7 +1,13 @@
 {
-    "name": "laravel/laravel",
+    "name": "esquare/challenge-1",
+    "description": "Challenge 1 assign by E Square",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "authors": [
+        {
+            "name": "Hunain Parekh",
+            "email": "hunainparekh85@gmail.com"
+        }
+    ],
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
