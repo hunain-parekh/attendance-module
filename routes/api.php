@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/attendance-data',[AttendanceController::class,'attendanceData'])->name('attendance-data');
+Route::post('/import',[AttendanceController::class,'import'])->name('import');
