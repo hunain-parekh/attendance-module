@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             EmployeeSeeder::class,
             LocationSeeder::class,
             ShiftSeeder::class,
+            ScheduleSeeder::class,
         ]);
     }
 }
