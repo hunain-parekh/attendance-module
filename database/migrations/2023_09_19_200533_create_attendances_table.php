@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('employee_id');
             $table->unsignedBigInteger('schedule_id');
-            $table->date('attendance_date');
+            $table->date('attendance_date')->nullable();
             $table->time('check_in')->nullable();
             $table->time('checkout')->nullable();
             $table->enum('status', ['present', 'absent'])->default('present');

@@ -17,7 +17,15 @@ class AttendanceController extends Controller
     }
 
     public function import(Request $request){
-        Excel::import(new ImportAttendance, $request->file('file')->store('files'));
-        return redirect()->back();
+        $request->validate([
+            'excel_file' => 'required|file|mimes:xlsx,csv', // Adjust the allowed file types as needed
+        ]);
+        try {
+            $file = $request->file('excel_file');
+            Excel::import(new ImportAttendance, $file);
+            return redirect()->back()->with('success', 'Attendance data imported successfully.');
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', 'An error occurred while importing attendance data: ' . $e->getMessage());
+        }
     }
 }
